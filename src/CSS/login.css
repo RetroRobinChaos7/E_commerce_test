@@ -1,0 +1,57 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../Images/books.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(7px);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+.login-block{
+    background: white;
+    width: 75%;
+    height: 500px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.login-form{
+    justify-self: center;
+    margin: 10px;
+    align-items: center;
+}
+.login-btn{
+    background-color: rgb(38, 50, 59);
+    padding: 10px 5px 10px 5px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 300px;
+    
+}
+header{
+    color: white;
+    background-color: rgb(38, 50, 59);
+    border-radius: 20px;
+    width: 65%;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+}
+input{
+    border-radius: 10px;
+    width: 300px;
+}
+label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: rgb(38, 50, 59);
+}

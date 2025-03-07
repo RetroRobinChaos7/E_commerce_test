@@ -1,0 +1,21 @@
+<div class="login-block">
+        <form id="loginid" class="login-form">
+            <div class="form-div">
+                <label for="username">Username: </label><br>
+                <input type="password" id="username" required><br><br>
+
+                <label for="password">Password: </label><br>
+                <input type="password" id="password" required><br><br>
+            
+                
+            </div>
+            <p>Dont have an acount? <a href="">register here!</a></p>
+        </form> 
+    </div>
+
+
+
+
+
+This at the day of me writing(March 7 2025 ) this concists of about 315 lines of personaly writen code and a total of 446 lines of code/html/css.
+I hoope that by the end of this project, that this website concist of 3000-5000 lines of code. that would be my all time best
