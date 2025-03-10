@@ -1,7 +1,7 @@
 <?php 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $uName = htmlspecialchars($_POST["username"]);
-    $pass = htmlspecialchars($_POST["password"]);
+    $pass = $_POST["password"];
     $cPass = htmlspecialchars($_POST["cpassword"]);
 
     if ($cPass === $pass && !empty($uName) && !empty($pass) && !empty($cPass)){
@@ -9,10 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
         if ($conn->connect_error) {
             die('Connection failed : '. $conn->connect_error);
         }else{
-            $stmt = $conn->prepare('Select password from users where username = ?');
-            $stmt->bind_param("s",$$uName);
+            $stmt = $conn->prepare('SELECT password FROM Users WHERE LOWER(username) = LOWER(?)');
+            $stmt->bind_param("s",$uName);
             if($stmt->execute()){
                 $stmt-> bind_result($storedpassword);
+                $stmt->fetch();
                 if(password_verify($pass,$storedpassword)) {
                     echo"<script>
                         alert('Login Successfull!');

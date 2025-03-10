@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
         exit();
     }else{
         include "userDB/connection.php";
-        header("Location: ../index.html");
+        header("Location: login.php");
     }
 }else{
     header("Location: ../Pages/register.html");

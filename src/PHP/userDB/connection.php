@@ -7,22 +7,21 @@
 
         $hasedPass = password_hash($pass, PASSWORD_BCRYPT);
 
-        
+        $conn = new mysqli('localhost','root','','userbase_db');
 
         if ($conn->connect_error) {
             die('Connection failed : '. $conn->connect_error);
         }else{
-            $stmt = $conn->prepare('Insert into users(email,userName,dob,password)values(?,?,?,?)');
+            $stmt = $conn->prepare('Insert into Users(email,userName,dob,password)values(?,?,?,?)');
             $stmt->bind_param('ssss', $email,$uName,$dob,$hasedPass);
             if($stmt->execute()){
                 echo "<script>
                     alert('Registration Successfully...');
-                    window.location.href = 'index.php';
                 </script>";
             }else{
                 echo "<script>
                     alert('Registration Failed...');
-                    window.location.href = 'index.php';
+                    window.location.href = '../register.php';
                 </script>";
             }
             $stmt->close();
