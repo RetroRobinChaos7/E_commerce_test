@@ -4,7 +4,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $pass = htmlspecialchars($_POST["password"]);
     $cPass = htmlspecialchars($_POST["cpassword"]);
 
-    //temporary login until i can get a databsase up and running on this guy
     if ($cPass === $pass && !empty($uName) && !empty($pass) && !empty($cPass)){
         $conn = new mysqli('localhost','root','','userbase_db');
         if ($conn->connect_error) {
