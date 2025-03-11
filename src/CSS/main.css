@@ -3,7 +3,6 @@ a {
     text-decoration: none;
     color: white;
     padding: 20px 50px 20px 20px;
-    margin-right: 60px;
 }
 html, body {
     height: 100%;
@@ -48,6 +47,7 @@ body {
     background-color: rgb(41, 55, 65);
     border-radius: 20px;
     padding: 10px 20px 10px 20px;
+    margin-right: 60px;
     
 }
 #menu-btn{
