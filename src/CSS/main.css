@@ -118,14 +118,17 @@ body {
     justify-self: center;
 }
 /*Listing css*/
-#add-btn{
+#list-add-btn{
     background: rgb(102, 122, 136);
     border-radius: 10px;
     color: white;
     padding: 5px;
-    font-size: 20px;
-    height: 60px;
-    margin-right: 30px;
+    font-size: large;
+    padding-left: 1rem;
+    padding-right:1rem; 
+    margin: 20px 10px 10px 20px;
+    align-content: center;
+
 }
 .my-lists {
     background: rgb(102, 122, 136);
@@ -162,4 +165,67 @@ body {
 }
 .list-desc p{
     margin-left: 10px;
+}
+.add-link {
+    border: none;
+    padding: 0px;
+}
+/*For addList page*/
+#top-mylist{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+#top-mylist a{
+    margin-right: 35%;
+    border: none;
+    padding: 0px;
+}
+.add-section{
+    background: rgb(102, 122, 136);
+    border: 1px solid black;
+    border-radius:20px;
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+    height: 410px;
+    justify-content: center;
+}
+.add-section-left{
+    background: white;
+    margin: 20px;
+    width: 45%;
+}
+.add-section-left div form{
+    display: flex;
+    flex-direction: row;
+    width:100px;
+    margin: 20px;
+}
+.add-section-left div form label,input{
+    font-size: 20px;
+    text-align: left;
+    left: 10%;
+    width: 300px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+.add-section-left div form textarea{
+    max-width: 300px;
+    max-height: 150px;
+    min-width: 200px;
+    min-height: 100px;
+}
+.add-section-right{
+    background:white;
+    margin: 20px;
+    width: 45%;
+}
+.info-left{
+    width: 400px;
+    height: 370px;
+}
+.info-right{
+    width: 300px;
+    height: 370px;
 }
