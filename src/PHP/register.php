@@ -7,12 +7,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $cPass = htmlspecialchars($_POST["cpassword"]);
 
     if (empty($email)||empty($uName)||empty($dob)||empty($pass)||empty($cPass) && $cPass === $pass){
-        header("Location: ../Pages/register.html");
+        header("Location: ../Pages/Register/register.html");
         exit();
     }else{
         include "userDB/connection.php";
         header("Location: login.php");
     }
 }else{
-    header("Location: ../Pages/register.html");
+    header("Location: ../Pages/Register/register.html");
 }

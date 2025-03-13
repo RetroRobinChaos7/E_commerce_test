@@ -37,9 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     }else{
         echo "<script>
             alert('Please fill all fields and ensure passwords match!');
-            setTimeout(function() { window.location.href = '../Pages/login.html'; }, 2000);
+            setTimeout(function() { window.location.href = '../Pages/Login/login.html'; }, 2000);
         </script>";
     }
 }else{
-    header("Location: ../Pages/login.html");
+    header("Location: ../Pages/login/login.html");
 }
