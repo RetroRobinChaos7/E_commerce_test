@@ -18,29 +18,53 @@
     <div class="add-section">
         <div class="add-section-left">
             <div>
-                    <form action="" method="POST">
-                    <div class="info-left">
-                    <label for="Title">Title: </label><br>
-                    <input type="text" required><br>
-                    <label for="Title">Description: </label><br>  
-                    <textarea name="" id="" maxlength="200"></textarea>
+                <form action="" method="POST">
+                <div class="info-left">
+                    <label for="title">Title: </label><br>
+                    <input type="text" name="title" required><br>
+                    <label for="price">Price: </label><br>
+                    <div class="price-div">
+                        <p class="currancy">R</p>
+                        <input type="number" name="price" min="0" max="99999" class="inp-price"><br>
                     </div>
+                    <label for="inp-cat">Catagories:</label><br>
+                    <div class="inp-check">
+                        <label for="it" id="inp-boxes">IT</label>
+                        <input type="checkbox" name="IT" id="inp-boxes">
+                        <label for="it" id="inp-boxes">Law</label>
+                        <input type="checkbox" name="IT" id="inp-boxes">
+                        <label for="it" id="inp-boxes">Science</label>
+                        <input type="checkbox" name="IT" id="inp-boxes">
+                        <label for="it" id="inp-boxes">Math</label>
+                        <input type="checkbox" name="IT" id="inp-boxes">
+                        <label for="it" id="inp-boxes">Humanities</label>
+                        <input type="checkbox" name="IT" id="inp-boxes">
+                        <label for="it" id="inp-boxes">Medical</label>
+                        <input type="checkbox" name="IT" id="inp-boxes">
+                    </div>
+                </div>
                     <div class="info-right">
-
+                        <label for="desc">Description: </label><br>  
+                        <textarea name="desc" maxlength="200" placeholder="A Brief descriptionof you listing."  ></textarea>                  
                     </div>
                     </form>
             </div>
         </div>
         <div class="add-section-right">
-            <img src="" alt="Item description">
+            <label for="pic">Item Picture:</label><br>
+            <div id="img-section">
+                <div id="before-place"></div>
+                <div class="img-place"><img id="preview-img"></div>
+                <input type="file" accept=".png,.jpg" >
+            </div>
         </div>
     </div>
     <div id="display-menu" class="display-menu">
-        <a href="../Catagories/Catagories.html">Catagories</a>
-        <a href="../Listings/List.html">Your Lists</a>
-        <a href="../Messages/Messages.html">Messages</a>
-        <a href="../Settings/Settings.html">Acount settings</a>
-        <a href="../About/About.html">About us</a>
+        <a href="../Catagories/Catagories.html" class="menu-links">Catagories</a>
+        <a href="../Listings/List.html" class="menu-links">Your Lists</a>
+        <a href="../Messages/Messages.html" class="menu-links">Messages</a>
+        <a href="../Settings/Settings.html" class="menu-links">Acount settings</a>
+        <a href="../About/About.html" class="menu-links">About us</a>
     </div>
     <script src="../../Scripts/main.js"></script>
 </body>

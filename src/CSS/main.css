@@ -1,4 +1,4 @@
-a {
+.menu-links{
     border: 1px solid black;
     text-decoration: none;
     color: white;
@@ -32,6 +32,7 @@ body {
     border-radius: 20px;
     letter-spacing: 2px;
     padding: 7px;
+    text-decoration: none;
 }
 #login{
     position: absolute;
@@ -48,6 +49,7 @@ body {
     border-radius: 20px;
     padding: 10px 20px 10px 20px;
     margin-right: 60px;
+    padding: 20px 50px 20px 20px;
     
 }
 #menu-btn{
@@ -62,6 +64,8 @@ body {
 
 #title a{
     border: none;
+    text-decoration: none;
+    color: white;
 }
 .top-bar {
     border: 1px solid;
@@ -206,15 +210,16 @@ body {
     font-size: 20px;
     text-align: left;
     left: 10%;
-    width: 300px;
+    width: 270px;
+    height: 25px;
     margin-bottom: 20px;
     margin-top: 5px;
 }
 .add-section-left div form textarea{
     max-width: 300px;
-    max-height: 150px;
-    min-width: 200px;
-    min-height: 100px;
+    max-height: 250px;
+    min-width: 300px;
+    min-height: 250px;
 }
 .add-section-right{
     background:white;
@@ -226,6 +231,54 @@ body {
     height: 370px;
 }
 .info-right{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
     width: 300px;
     height: 370px;
+}
+.price-div{
+    display: flex;
+    flex-direction: row;
+}
+.currancy{
+    font-size: 25px;
+    margin: 10px 5px 0px 0px;
+}
+.inp-price{
+    width: 248px;
+}
+.inp-check{
+    display: flexbox;
+}
+#inp-boxes{
+    width: 25px;
+}
+/*resposive for form*/
+@media screen and (max-width : 1150px){
+    .add-section-left div form label,input{
+        width: 100px;
+    }
+    .add-section-left div form textarea{
+        max-width: 120px;
+        min-width: 120px;
+    }
+    .inp-price{
+        width: 80px;
+    }
+    #inp-boxes{
+        width: 10px;
+        font-size: 10px;
+        margin: 0px;
+        height: 10px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .add-section-left div form textarea{
+        max-width: 160px;
+        min-width: 160px;
+    }
+}
+#img-section{
+    
 }
