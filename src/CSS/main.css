@@ -4,6 +4,16 @@
     color: white;
     padding: 20px 50px 20px 20px;
 }
+.login-link{
+    background-color: rgb(41, 55, 65);
+    border: none;
+    border-radius: 20px;
+    font-size: medium;
+    text-decoration: none;
+    color: white;
+    margin-right: 60px;
+    padding: 10px 20px 10px 20px;
+}
 html, body {
     height: 100%;
 }
@@ -41,16 +51,6 @@ body {
     top: 2%;
     width: fit-content;
     background-color: rgb(38, 50, 59);
-}
-#login a{
-    border: none;
-    font-size: medium;
-    background-color: rgb(41, 55, 65);
-    border-radius: 20px;
-    padding: 10px 20px 10px 20px;
-    margin-right: 60px;
-    padding: 20px 50px 20px 20px;
-    
 }
 #menu-btn{
     border-radius: 50%;
@@ -196,17 +196,19 @@ body {
     justify-content: center;
 }
 .add-section-left{
+    display: flex;
+    flex-direction: row;
     background: white;
     margin: 20px;
     width: 45%;
 }
-.add-section-left div form{
+#list-form {
     display: flex;
     flex-direction: row;
-    width:100px;
+    width: 100%;
     margin: 20px;
 }
-.add-section-left div form label,input{
+#list-form label,input{
     font-size: 20px;
     text-align: left;
     left: 10%;
@@ -215,10 +217,10 @@ body {
     margin-bottom: 20px;
     margin-top: 5px;
 }
-.add-section-left div form textarea{
-    max-width: 300px;
+.info-right textarea{
+    max-width: 260px;
     max-height: 250px;
-    min-width: 300px;
+    min-width: 260px;
     min-height: 250px;
 }
 .add-section-right{
@@ -254,14 +256,46 @@ body {
 #inp-boxes{
     width: 25px;
 }
+#img-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 75%;
+}
+.img-place{
+    border: 1px solid black;
+    background: lightgray;
+    width:75%;
+    height: 75%;
+    margin: 15px;
+}
+#img-select{
+    width: auto;
+}
+#preview-img{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
 /*resposive for form*/
-@media screen and (max-width : 1150px){
-    .add-section-left div form label,input{
-        width: 100px;
-    }
-    .add-section-left div form textarea{
+@media screen and (max-width: 1300px) {
+    .info-right textarea{
         max-width: 120px;
         min-width: 120px;
+    }
+    #img-select{
+        width: 200px;
+        font-size: small;
+    }
+}
+@media screen and (max-width : 1150px){
+    #list-form label,input{
+        width: 100px;
+    }
+    .info-right textarea{
+        max-width: 90px;
+        min-width: 90px;
     }
     .inp-price{
         width: 80px;
@@ -272,13 +306,8 @@ body {
         margin: 0px;
         height: 10px;
     }
-}
-@media screen and (max-width: 1300px) {
-    .add-section-left div form textarea{
-        max-width: 160px;
-        min-width: 160px;
+    #img-select{
+        width: 150px;
+        font-size: smaller;
     }
-}
-#img-section{
-    
 }
