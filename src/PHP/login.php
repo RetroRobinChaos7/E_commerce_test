@@ -1,4 +1,5 @@
 <?php 
+session_start();
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $uName = htmlspecialchars($_POST["username"]);
     $pass = $_POST["password"];
@@ -15,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                 $stmt-> bind_result($storedpassword);
                 $stmt->fetch();
                 if(password_verify($pass,$storedpassword)) {
+                    $_SESSION ['username'] = $uName;
                     echo"<script>
                         alert('Login Successfull!');
                         window.location.href = '../index.html';

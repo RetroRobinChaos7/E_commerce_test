@@ -16,7 +16,7 @@
         <h1 class="headline">Fill in you listings info</h1>
     </div>
     <div class="add-section">
-        <form action="" method="POST" id="list-form">
+        <form action="../../PHP/add.php" method="POST" id="list-form">
             <div class="add-section-left">
                     <div class="info-left">
                         <label for="title">Title: </label><br>
@@ -29,17 +29,17 @@
                         <label for="inp-cat">Catagories:</label><br>
                         <div class="inp-check">
                             <label for="it" id="inp-boxes">IT</label>
-                            <input type="checkbox" name="IT" id="inp-boxes">
+                            <input type="checkbox" name="cat" id="inp-boxes" value="it">
                             <label for="it" id="inp-boxes">Law</label>
-                            <input type="checkbox" name="IT" id="inp-boxes">
+                            <input type="checkbox" name="cat" id="inp-boxes" value="law">
                             <label for="it" id="inp-boxes">Science</label>
-                            <input type="checkbox" name="IT" id="inp-boxes">
+                            <input type="checkbox" name="cat" id="inp-boxes" value="science">
                             <label for="it" id="inp-boxes">Math</label>
-                            <input type="checkbox" name="IT" id="inp-boxes">
+                            <input type="checkbox" name="cat" id="inp-boxes" value="math">
                             <label for="it" id="inp-boxes">Humanities</label>
-                            <input type="checkbox" name="IT" id="inp-boxes">
+                            <input type="checkbox" name="cat" id="inp-boxes" value="humanities">
                             <label for="it" id="inp-boxes">Medical</label>
-                            <input type="checkbox" name="IT" id="inp-boxes">
+                            <input type="checkbox" name="cat" id="inp-boxes" value="medical">
                         </div>
                     </div>
                         <div class="info-right">
@@ -51,7 +51,7 @@
                 <label for="pic">Item Picture:</label><br>
                 <div id="img-section">
                     <div class="img-place"><img id="preview-img" alt="Item Image"></div>
-                    <input type="file" accept=".png,.jpg" id="img-select">
+                    <input type="file" accept=".png,.jpg" id="img-select" name="listImg">
                 </div>
                 <input type="submit" id="list-add-btn">
             </div>
