@@ -1,3 +1,8 @@
 I would like to use this is a sort of .README but its also where i store code for later or talk about progress.
 This at the day of me writing(March 7 2025 ) this concists of about 315 lines of personaly writen code and a total of 446 lines of code/html/css.
 I hoope that by the end of this project, that this website concist of 3000-5000 lines of code. that would be my all time best
+
+
+Update 19 March 2025: I need to redo the databses i have realised, the users table wont be to much of a hastle, im not changing much, 
+But the listings table needs alot of work, im alos gonna have to add a couple of things to the login.html and the addList.html, 
+which will be a nightmare when it comes to css, since i really messed it up by changing alot of stuff.
