@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $username = $_SESSION['username'];
 
     include 'mysqlConn.php';
+    $imageLikn = "";
     $stmt = $conn->prepare('Insert Into listdb(title,price,cat,description,itemImage,user)');
     $stmt->bind_param('sdssbs', $title, $price, $cat, $desc, $listImg, $username);
     if($stmt->execute()){

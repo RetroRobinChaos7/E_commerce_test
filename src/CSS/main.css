@@ -4,16 +4,6 @@
     color: white;
     padding: 20px 50px 20px 20px;
 }
-.login-link{
-    background-color: rgb(41, 55, 65);
-    border: none;
-    border-radius: 20px;
-    font-size: medium;
-    text-decoration: none;
-    color: white;
-    margin-right: 60px;
-    padding: 10px 20px 10px 20px;
-}
 html, body {
     height: 100%;
 }
@@ -24,17 +14,18 @@ body {
 .display-menu{
     text-align: left;
     display: none;
-    top: 9.8%;
-    right: 0%;
     position: absolute;
+    z-index: 1000;
+    right: 0%;
     text-align: left;
     background: rgb(38, 50, 59);
+    width: 250px;
 }
 .display-menu.active {
     display: flex;
     flex-direction: column;
 }
-#title {
+.nav-content {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     width: fit-content;
@@ -43,6 +34,20 @@ body {
     letter-spacing: 2px;
     padding: 7px;
     text-decoration: none;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    background-color: rgb(41, 55, 65);
+}
+#dropdown-btn{
+    border-radius: 50%;
+    rotate: 90deg;
+    margin-right: 10px;
+    padding: 0px 10px 5px 10px;
+    background-color: rgb(41, 55, 65);
+}
+.nav-item{
+    align-self: center;
 }
 #login{
     position: absolute;
@@ -52,34 +57,8 @@ body {
     width: fit-content;
     background-color: rgb(38, 50, 59);
 }
-#menu-btn{
-    border-radius: 50%;
-    position: absolute;
-    right: 10px;
-    top: 2%;
-    rotate: 90deg;
-    margin-right: 10px;
-    padding: 0px 10px 5px 10px;
-}
-
-#title a{
-    border: none;
-    text-decoration: none;
-    color: white;
-}
-.top-bar {
-    border: 1px solid;
+.navbar{
     background-color: rgb(38, 50, 59);
-    height: 70px;
-    width: 100%;
-    align-content: center;
-    border: 2px solid black;
-}
-
-.ribbon-content {
-    background-color: rgb(41, 55, 65);
-    color: white;
-    font-size: 35px;
 }
 .top-items{
     display: flex;
