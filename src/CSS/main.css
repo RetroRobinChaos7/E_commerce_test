@@ -132,16 +132,14 @@ body {
     align-items: center;
     display: flex;
     flex-direction: row;
-    height: 300px;
     justify-content: right;
 }
-.list-desc {
+#list-desc {
     background: rgb(102, 122, 136);
     border: 1px solid black;
     border-radius:20px;
     width: 100%;
-    height: 150px;
-    margin: 50px;
+    margin: auto;
     justify-self: left;
     font-size: 20px;
     color: white;
@@ -164,7 +162,97 @@ body {
     border: none;
     padding: 0px;
 }
-.add-section{
+#add-section{
+    background: rgb(102, 122, 136);
+    border: 1px solid black;
+    border-radius:20px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 100%;
+    height: 410px;
+    justify-content: center;
+}
+
+#list-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+}
+
+.add-section-box{
+    display: flex;
+    flex-direction: row;
+    background: white;
+    margin: 20px;
+    width: 47%;
+}
+
+.info-box{
+    width: 45%;
+    height: 370px;
+    margin: auto;
+}
+
+.list-add-first{
+    font-size: 20px;
+    text-align: left;
+    left: 10%;
+    width: 89%;
+    height: 25px;
+    margin: 1%;
+}
+input.list-add-first{
+    font-size: 15px;
+}
+.inp-price{
+    width: 100%;
+}
+.inp-check{
+    display: flexbox;
+}   
+#inp-boxes{
+    width: 25px;
+}
+.list-textarea{
+    max-width: 250px;
+    max-height: 265px;
+    min-width: 250px;
+    min-height: 265px;
+}
+#right-add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#img-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 75%;
+}
+.img-place{
+    border: 1px solid black;
+    background: lightgray;
+    width:75%;
+    height: 75%;
+    margin: auto;
+}
+#img-select{
+    width: auto;
+}
+#preview-img{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.btn-selector{
+    display: flexbox;
+    flex-direction: column;
+}
+/* .add-section{
     background: rgb(102, 122, 136);
     border: 1px solid black;
     border-radius:20px;
@@ -257,7 +345,7 @@ body {
     height: 100%;
     display: none;
 }
-/*resposive for form*/
+/*resposive for form
 @media screen and (max-width: 1300px) {
     .info-right textarea{
         max-width: 120px;
@@ -289,4 +377,4 @@ body {
         width: 150px;
         font-size: smaller;
     }
-}
+} */
