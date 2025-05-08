@@ -12,7 +12,7 @@
     <HEADER>
         <div class="navbar navbar-expand">
             <div class="container" id="top-bar">
-                <div id="title" class="navbar-brand"> <a href="index.html" class="nav-content">Matexchange</a></div>
+                <div id="title" class="navbar-brand"> <a href="index.php" class="nav-content">Matexchange</a></div>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="Pages/Login/login.html" class="nav-content">Login</a></li>
                     <li class="nav-item"><button class="nav-content" id="dropdown-btn">|||</button></li>
@@ -21,10 +21,10 @@
         </div>     
     </HEADER>
     <div id="display-menu" class="display-menu">
-        <a href="Pages/Catagories/Catagories.html" class="menu-links">Catagories</a>
-        <a href="Pages/Listings/List.html" class="menu-links">Your Lists</a>
-        <a href="Pages/Messages/Messages.html" class="menu-links">Messages</a>
-        <a href="Pages/Settings/" class="menu-links">Acount settings</a>
+        <a href="Pages/Catagories/Catagories.php" class="menu-links">Catagories</a>
+        <a href="Pages/Listings/List.php" class="menu-links">Your Lists</a>
+        <a href="Pages/Messages/Messages.php" class="menu-links">Messages</a>
+        <a href="Pages/Settings/Settings.html" class="menu-links">Acount settings</a>
         <a href="Pages/About/About.html" class="menu-links">About us</a>
     </div>
     <div class="top-items">

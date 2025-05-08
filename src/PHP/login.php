@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                     $_SESSION ['username'] = $uName;
                     echo"<script>
                         alert('Login Successfull!');
-                        window.location.href = '../index.html';
+                        window.location.href = '../index.php';
                         </script>";
                 }else{
                     echo "<script>

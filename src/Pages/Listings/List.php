@@ -1,3 +1,9 @@
+<?php 
+    include "../../PHP/userDB/mysqlConn.php";
+
+    $sqlSelect = "SELECT * FROM listdb ORDER BY created_at DESC";
+    $result = $conn ->query($sqlSelect);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,38 +18,34 @@
     <Header>
         <div class="navbar navbar-expand">
             <div class="container" id="top-bar">
-                <div id="title" class="navbar-brand"> <a href="../../index.html" class="nav-content">Matexchange</a></div>
+                <div id="title" class="navbar-brand"> <a href="../../index.php" class="nav-content">Matexchange</a></div>
                 <div id="menu-btn" class="ribbon-content"><button class="nav-content" id="dropdown-btn">|||</button></div>
             </div>
         </div>
     </Header>
     <div id="display-menu" class="display-menu">
-        <a href="../Catagories/Catagories.html" class="menu-links">Catagories</a>
-        <a href="../Listings/List.html" class="menu-links">Your Lists</a>
-        <a href="../Messages/Messages.html" class="menu-links">Messages</a>
+        <a href="../Catagories/Catagories.php" class="menu-links">Catagories</a>
+        <a href="../Listings/List.php" class="menu-links">Your Lists</a>
+        <a href="../Messages/Messages.php" class="menu-links">Messages</a>
         <a href="../Settings/Settings.html" class="menu-links">Acount settings</a>
         <a href="../About/About.html" class="menu-links">About us</a>
     </div>
     <h1 class="headline">My Lists</h1>
     <div class="my-lists">
+        <?php while($row = $result->fetch_assoc()): ?>
         <div class="item-block">
-            <div class="item-image"></div>
-            <div class="item-description"></div>
-        </div>
-        <div class="item-block">
-            <div class="item-image"></div>
-            <div class="item-description"></div>
-        </div>
-        <div class="item-block">
-            <div class="item-image"></div>
-            <div class="item-description"></div>
-        </div>
-        <div class="item-block">
-            <div class="item-image"><img src="" alt=""></div>
-            <div class="item-description"></div>
+            <div class="item-image">
+                <img src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Product Image" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="item-description"> 
+                    <p><?php echo htmlspecialchars($row['title']) ?></p>
+                    <p><?php echo "R" . htmlspecialchars($row['price'])?></p>
+                    <p><?php echo htmlspecialchars($row['description'])?></p>
+                </div>
+            </div>
+        <?php endwhile;?>
         </div>
     </div>
-
+    
     <div class="list-add-area">
         <div class="p-2 m-4" id="list-desc">
             <p>Want to list you handbook or educational material? with the button on the right you can, but do remeber these rules:</p>
