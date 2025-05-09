@@ -72,7 +72,7 @@ body {
     align-items:center ;
     border: 2px solid black;
     height: 350px;
-    width: 330px;
+    width: 280px;
     margin: 2%;
 }
 .item-block-selected {
@@ -81,7 +81,7 @@ body {
     align-items:center ;
     border: 2px solid black;
     height: 360px;
-    width: 340px;
+    width: 290px;
     margin: 2%;
     box-shadow: 0 0 10px #48abe0;
 }
@@ -113,7 +113,7 @@ body {
     align-content: center;
 
 }
-.my-lists {
+#my-lists {
     background: rgb(102, 122, 136);
     border: 1px solid black;
     border-radius:20px;
@@ -122,10 +122,10 @@ body {
     margin: 30px;
     height: 410px;
 }
-.my-lists .item-block{
+#my-lists .item-block{
     background-color: white;
 }
-.my-lists .item-block-selected{
+#my-lists .item-block-selected{
     background-color: white;
 }
 .list-add-area {

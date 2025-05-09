@@ -7,12 +7,13 @@ for (var i =0; i < frontPI.length;i++){
 function glowSet(event){
     event.stopPropagation();
   for (var x = 0; x < frontPI.length;x++){
-    frontPI[x].className = "item-block";
+    frontPI[x].classList.remove("item-block-selected");
   }
-  this.className = "item-block-selected";
+  this.classList.add("item-block-selected");
 }
 document.body.addEventListener("click", function() {
     for (let i = 0; i < frontPI.length; i++) {
-        frontPI[i].className = "item-block";
+        frontPI[i].classList.remove("item-block-selected");
+
     }
 });

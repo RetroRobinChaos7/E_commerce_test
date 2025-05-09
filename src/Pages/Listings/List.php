@@ -31,18 +31,20 @@
         <a href="../About/About.html" class="menu-links">About us</a>
     </div>
     <h1 class="headline">My Lists</h1>
-    <div class="my-lists">
-        <?php while($row = $result->fetch_assoc()): ?>
-        <div class="item-block">
-            <div class="item-image">
-                <img src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Product Image" style="width: 100%; height: 100%; object-fit: cover;">
-                <div class="item-description"> 
-                    <p><?php echo htmlspecialchars($row['title']) ?></p>
-                    <p><?php echo "R" . htmlspecialchars($row['price'])?></p>
-                    <p><?php echo htmlspecialchars($row['description'])?></p>
+    <div class="container p-2" id="my-lists">
+        <div class="row">
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <div class="col-md-3 mb-3">
+                    <div class="item-block card h-100 m-2">
+                        <img src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" class="card-img-top" alt="Item Image" style="max-height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo htmlspecialchars($row['title']); ?></h5>
+                            <p class="card-text">Price: R<?php echo number_format($row['price'], 2); ?></p>
+                            <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        <?php endwhile;?>
+            <?php endwhile; ?>
         </div>
     </div>
     
