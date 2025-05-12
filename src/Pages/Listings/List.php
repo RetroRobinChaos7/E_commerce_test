@@ -16,7 +16,7 @@
 </head>
 <body>
     <Header>
-        <div class="navbar navbar-expand">
+        <div class="navbar navbar-expand" style="box-shadow: 0 0 50px rgb(155, 155, 155); border: 2px solid black; border-radius: 5px;">
             <div class="container" id="top-bar">
                 <div id="title" class="navbar-brand"> <a href="../../index.php" class="nav-content">Matexchange</a></div>
                 <div id="menu-btn" class="ribbon-content"><button class="nav-content" id="dropdown-btn">|||</button></div>
@@ -38,9 +38,11 @@
                    <img src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
                </div>
                <div class="item-description">
-                   <h5><?php echo htmlspecialchars($row['title']); ?></h5>
-                   <p>Price: $<?php echo number_format($row['price'], 2); ?></p>
-                   <p><?php echo htmlspecialchars($row['description']); ?></p>
+                    <div class="box">
+                        <h5><?php echo htmlspecialchars($row['title']); ?></h5>
+                        <p>Price: $<?php echo number_format($row['price'], 2); ?></p>
+                        <p><?php echo htmlspecialchars($row['description']); ?></p>
+                    </div>
                </div>
            </div>
        <?php endwhile; ?>

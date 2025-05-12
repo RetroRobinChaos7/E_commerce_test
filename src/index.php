@@ -21,7 +21,7 @@
         </div>     
     </HEADER>
     <div id="display-menu" class="display-menu">
-        <a href="Pages/Catagories/Catagories.php" class="menu-links">Catagories</a>
+        <a href="Pages/Catagories/Catagories.html" class="menu-links">Catagories</a>
         <a href="Pages/Listings/List.php" class="menu-links">Your Lists</a>
         <a href="Pages/Messages/Messages.php" class="menu-links">Messages</a>
         <a href="Pages/Settings/Settings.html" class="menu-links">Acount settings</a>

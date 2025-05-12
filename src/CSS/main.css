@@ -10,6 +10,8 @@ html, body {
 body {
     margin: 0;
     padding: 0;
+    background-color: black;
+    --bs-body-bg:black;
 }
 .display-menu{
     text-align: left;
@@ -67,18 +69,19 @@ body {
     justify-content: center;
 }
 .items-container {
-    background: rgb(102, 122, 136);
+  background: rgb(102, 122, 136); 
   display: flex;
   flex-wrap: wrap;
   gap: 20px; 
   justify-content: center;
+
 }
 .item-block {
     display: flex;
     flex-direction: column;
     align-items:center ;
     border: 2px solid black;
-    height: 350px;
+    height: 400px;
     width: 280px;
     margin: 2%;
 }
@@ -87,16 +90,21 @@ body {
     flex-direction: column;
     align-items:center ;
     border: 2px solid black;
-    height: 360px;
+    height: 410px;
     width: 290px;
     margin: 2%;
     box-shadow: 0 0 10px #48abe0;
 }
-.item-image,.item-description {
-    height: 150px;
+.item-image{
+    border: 1px solid black;
+}
+.item-description {
+    
+    height: 200px;
     width: 80%;
     border: 1px solid black;
     margin: 5%;
+    
 } 
 .menu-btn{
     font-size: 35px;
@@ -127,7 +135,7 @@ body {
     display: flex;
     flex-direction: row;
     margin: 30px;
-    height: 410px;
+    height: 500px;
 }
 .my-lists .item-block{
     background-color: white;
