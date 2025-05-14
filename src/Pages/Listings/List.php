@@ -16,7 +16,7 @@
 </head>
 <body>
     <Header>
-        <div class="navbar navbar-expand" style="box-shadow: 0 0 50px rgb(155, 155, 155); border: 2px solid black; border-radius: 5px;">
+        <div class="navbar navbar-expand">
             <div class="container" id="top-bar">
                 <div id="title" class="navbar-brand"> <a href="../../index.php" class="nav-content">Matexchange</a></div>
                 <div id="menu-btn" class="ribbon-content"><button class="nav-content" id="dropdown-btn">|||</button></div>
@@ -24,7 +24,7 @@
         </div>
     </Header>
     <div id="display-menu" class="display-menu">
-        <a href="../Catagories/Catagories.php" class="menu-links">Catagories</a>
+        <a href="../Catagories/Catagories.html" class="menu-links">Catagories</a>
         <a href="../Listings/List.php" class="menu-links">Your Lists</a>
         <a href="../Messages/Messages.php" class="menu-links">Messages</a>
         <a href="../Settings/Settings.html" class="menu-links">Acount settings</a>

@@ -1,7 +1,12 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-session_start();  
+session_start();
+if (!isset($_SESSION['username'])) {
+    echo "<script>alert('You must be logged in to list an item.');</script>";
+    exit();
+}
+$username = $_SESSION['username'];  
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $title = htmlspecialchars($_POST['title']);
     $price = htmlspecialchars($_POST['price']);

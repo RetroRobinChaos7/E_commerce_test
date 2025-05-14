@@ -8,13 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
-<body>
+<body><?php ini_set('session.cookie_lifetime', 0);  session_start();?>
     <HEADER>
         <div class="navbar navbar-expand">
             <div class="container" id="top-bar">
                 <div id="title" class="navbar-brand"> <a href="index.php" class="nav-content">Matexchange</a></div>
                 <ul class="navbar-nav">
+                    <?php if (isset($_SESSION['username'])): ?>
+                    <li class="nav-item"><a href="Pages/Profile/profile.php" class="nav-content"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
+                    <?php else: ?>
                     <li class="nav-item"><a href="Pages/Login/login.html" class="nav-content">Login</a></li>
+                    <?php endif; ?>
                     <li class="nav-item"><button class="nav-content" id="dropdown-btn">|||</button></li>
                 </ul>
             </div>

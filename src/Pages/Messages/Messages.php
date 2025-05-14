@@ -17,14 +17,14 @@
             </div>
         </div>
     </Header>
-    <h1 class="headline">Messages</h1>
     <div id="display-menu" class="display-menu">
-        <a href="../Catagories/Catagories.php" class="menu-links">Catagories</a>
+        <a href="../Catagories/Catagories.html" class="menu-links">Catagories</a>
         <a href="../Listings/List.php" class="menu-links">Your Lists</a>
         <a href="../Messages/Messages.php" class="menu-links">Messages</a>
         <a href="../Settings/Settings.html" class="menu-links">Acount settings</a>
         <a href="../About/About.html" class="menu-links">About us</a>
     </div>
+    <h1 class="headline">Messages</h1>
     <script src="../../Scripts/main.js"></script>
 </body>
 </html>
