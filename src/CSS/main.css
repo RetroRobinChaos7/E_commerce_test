@@ -65,7 +65,7 @@ body {
     justify-content: center;
 }
 .item-block {
-    background-color: white;
+    background-color: rgb(167, 167, 167);
     display: flex;
     flex-direction: column;
     align-items:center ;
@@ -75,7 +75,7 @@ body {
     margin: 2%;
 }
 .item-block-selected {
-    background-color: white;
+    background-color: rgb(167, 167, 167);
     display: flex;
     flex-direction: column;
     align-items:center ;
@@ -100,7 +100,9 @@ body {
     background-color: rgb(41, 55, 65);
 } 
 .headline {
+    margin-top: 15px;
     justify-self: center;
+    color: white;
 }
 /*Listing css*/
 #list-add-btn{
@@ -113,6 +115,7 @@ body {
     padding-right:1rem; 
     margin: 20px 10px 10px 20px;
     align-content: center;
+    box-shadow: 0 0 20px rgb(155, 155, 155); 
 
 }
 .my-lists {
@@ -139,13 +142,13 @@ body {
 }
 #list-desc {
     background-color: rgb(38, 50, 59);
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius:20px;
     width: 100%;
-    margin: auto;
     justify-self: left;
     font-size: 20px;
     color: white;
+    box-shadow: 0 0 20px rgb(155, 155, 155); 
 }
 .list-desc p{
     margin-left: 10px;
@@ -168,7 +171,7 @@ body {
 
 #add-section{
     background-color: rgb(38, 50, 59);
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius:20px;
     display: flex;
     flex-direction: row;
@@ -176,6 +179,7 @@ body {
     width: 100%;
     height: 410px;
     justify-content: center;
+    box-shadow: 0 0 20px rgb(155, 155, 155);
 }
 
 #list-form {
@@ -191,6 +195,7 @@ body {
     background: white;
     margin: 20px;
     width: 47%;
+    border: 2px solid black;
 }
 
 .info-box{

@@ -15,6 +15,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php session_start();?>
     <Header>
         <div class="navbar navbar-expand">
             <div class="container" id="top-bar">
@@ -30,8 +31,8 @@
         <a href="../Settings/Settings.html" class="menu-links">Acount settings</a>
         <a href="../About/About.html" class="menu-links">About us</a>
     </div>
-    <h1 class="headline">My Lists</h1>
-   <div class="my-lists" id="items-container">
+    <h1 class="headline"><?php echo htmlspecialchars($_SESSION['username'])?>'s Lists</h1>
+   <div class="my-lists m-4 " id="items-container">
        <?php while ($row = $result->fetch_assoc()): ?>
            <div class="item-block">
                <div class="item-image">
@@ -50,11 +51,11 @@
         
         <div class="list-add-area">
         <div class="p-2 m-4" id="list-desc">
-            <p>Want to list you handbook or educational material? with the button on the right you can, but do remeber these rules:</p>
+            <p style="font-size: 23px;">Want to list you handbook or educational material? with the button on the right you can, but do remeber these rules:</p>
             <ul>
                 <li>Please only list learning recources!</li>
                 <li>No PDF's or any digital versions of books(only list pysical copies)</li>
-                <li>Do NOT list inapropriate materials, this includes picturs,descriptions and names!</li>
+                <li><font color="red">DO NOT</font> list inapropriate materials, this includes picturs,descriptions and names!</li>
             </ul>
         </div>
         <a href="../extraPages/addList.html" class="add-link"><button id="list-add-btn">List an item</button></a>

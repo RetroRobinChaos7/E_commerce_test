@@ -9,8 +9,21 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <?php session_start(); ?>
-    <a href="../../index.php" class="text-dark" style="text-decoration: none;"><button id="list-add-btn ">&#8592;</button></a>
-    <?php echo htmlspecialchars($_SESSION['username'])?>
+    <?php 
+        session_start(); 
+        if (isset($_POST['logout'])){
+            session_unset();
+            session_destroy();
+            header("Location: ../../index.php");
+            exit();
+        }
+    ?>
+    <a href="../../index.php" class="text-dark" style="text-decoration: none;"><button id="list-add-btn">&#8592;</button></a>
+    <div class="container" style="background-color: white; width: 100%; height: 600px;">
+        <?php echo htmlspecialchars($_SESSION['username'])?>
+        <form method="POST">
+            <button type="submit" name="logout" id="list-add-btn">Logout</button>
+        </form>
+    </div>
 </body>
 </html>
