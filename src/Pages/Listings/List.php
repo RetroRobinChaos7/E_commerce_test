@@ -31,7 +31,7 @@
         <a href="../Settings/Settings.html" class="menu-links">Acount settings</a>
         <a href="../About/About.html" class="menu-links">About us</a>
     </div>
-    <h1 class="headline"><?php echo htmlspecialchars($_SESSION['username'])?>'s Lists</h1>
+    <h1 class="headline"><?php if (isset($_SESSION['username'])): ?><?php echo htmlspecialchars($_SESSION['username'])?>'s Lists<?php else: ?>User List<?php endif; ?></h1>
    <div class="my-lists m-4 " id="items-container">
        <?php while ($row = $result->fetch_assoc()): ?>
            <div class="item-block">

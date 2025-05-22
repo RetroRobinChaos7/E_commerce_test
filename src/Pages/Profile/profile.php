@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matexchange</title>
     <link rel="stylesheet" href="../../CSS/main.css">
+    <link rel="stylesheet" href="../../CSS/profile.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php session_start(); ?>
     <?php 
-        session_start(); 
         if (isset($_POST['logout'])){
             session_unset();
             session_destroy();
@@ -19,10 +20,15 @@
         }
     ?>
     <a href="../../index.php" class="text-dark" style="text-decoration: none;"><button id="list-add-btn">&#8592;</button></a>
-    <div class="container" style="background-color: white; width: 100%; height: 600px;">
-        <?php echo htmlspecialchars($_SESSION['username'])?>
+    <div class="container">
         <form method="POST">
-            <button type="submit" name="logout" id="list-add-btn">Logout</button>
+        <div class="row">
+            <div class="col">
+                <div class="circle"><button class="circle-button"></button></div>
+                Welcome <?php echo htmlspecialchars($_SESSION['username'])?>!
+            </div>
+            <div class="col"><button type="submit" name="logout" id="list-add-btn">Logout</button></div>
+        </div>
         </form>
     </div>
 </body>

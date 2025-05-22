@@ -20,7 +20,7 @@
                     <li class="nav-item"><a href="Pages/Login/login.html" class="nav-content">Login</a></li>
                     <?php endif; ?>
                     <li class="nav-item"><button class="nav-content" id="dropdown-btn">|||</button></li>
-                </ul>
+                </ul>   
             </div>
         </div>     
     </HEADER>
