@@ -18,3 +18,4 @@ When i deleted xamp i forgot to take out my src folder from xamp.
 Atleast i do commit to git hub so not all was lost but had to redo a bunch of stuff.
 Also i have to redo the databses because i thought i copied over everything it wouold need to work,
 turns out i didnt and now i have to redo them, no matter thos isnce its a simple fix.
+Currently im fixing up the user profile page, after its complete i will however begin implamenting a search bar

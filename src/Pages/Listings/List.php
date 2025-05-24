@@ -34,18 +34,20 @@
     <h1 class="headline"><?php if (isset($_SESSION['username'])): ?><?php echo htmlspecialchars($_SESSION['username'])?>'s Lists<?php else: ?>User List<?php endif; ?></h1>
    <div class="my-lists m-4 " id="items-container">
        <?php while ($row = $result->fetch_assoc()): ?>
-           <div class="item-block">
-               <div class="item-image">
-                   <img src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
-               </div>
-               <div class="item-description">
-                    <div class="box">
-                        <h5><?php echo htmlspecialchars($row['title']); ?></h5>
-                        <p>Price: $<?php echo number_format($row['price'], 2); ?></p>
-                        <p><?php echo htmlspecialchars($row['description']); ?></p>
-                    </div>
-               </div>
-           </div>
+        <a href="item.php?id=<?php echo $row['id'];?>" class="item-link">
+            <div class="item-block">
+                <div class="item-image">
+                    <img class="list-image" src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
+                </div>
+                <div class="item-description">
+                     <div class="box">
+                         <h5 class="list-title"><?php echo htmlspecialchars($row['title']); ?></h5>
+                         <p>Price: $<?php echo number_format($row['price'], 2); ?></p>
+                         <p class="list-ini-desc"><?php echo htmlspecialchars($row['description']); ?></p>
+                     </div>
+                </div>
+            </div>  
+        </a>
        <?php endwhile; ?>
     </div>
         

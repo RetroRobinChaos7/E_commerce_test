@@ -24,12 +24,17 @@
         <form method="POST">
         <div class="row">
             <div class="col">
-                <div class="circle"><button class="circle-button"></button></div>
-                Welcome <?php echo htmlspecialchars($_SESSION['username'])?>!
+                <div class="circle"><button class="circle-button" id="circle-replace"></button></div>
+                <p>Welcome <?php echo htmlspecialchars($_SESSION['username'])?>!</p>
+                <button type="submit" name="logout" id="list-add-btn">Logout</button>
+                <div class="textarea-section">
+                    <p>Bio</p>
+                    <textarea class="textarea-bio"></textarea>
+                </div>
             </div>
-            <div class="col"><button type="submit" name="logout" id="list-add-btn">Logout</button></div>
         </div>
         </form>
+        <a href="../Settings/Settings.html"><button name="Acount-Options" id="list-add-btn">Acount Settings</button></a>
     </div>
 </body>
 </html>
