@@ -5,9 +5,11 @@
     $itemID = intval($_GET['id']);
 
     $stmt = $conn->prepare("select * from listdb where id =?");
-    
-  }
-?>
+    $stmt -> bind_param("i",$itemID);
+    $stmt -> execute();
+    $result = $stmt->get_result();
+    if ($item = $result->fetch_assoc()):
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +37,17 @@
         <a href="../Settings/Settings.html" class="menu-links">Acount settings</a>
         <a href="../About/About.html" class="menu-links">About us</a>
     </div>
-    <h1 class="headline">ITEM PAGE (WIP)</h1>
-    <h2 class="headline">Begone, there is noting fo you here!!!</h2>
+    <h1 class="headline"><?php echo htmlspecialchars($item['title']);?></h1>
+    <img src="../../<?php echo htmlspecialchars($item['itemImage']); ?>" style="width:300px;">
+    <p>Price: $<?php echo number_format($item['price'], 2); ?></p>
+    <p><?php echo nl2br(htmlspecialchars($item['description'])); ?></p>
 </body>
 </html>
+<?php
+    else:
+        echo "Item not found.";
+    endif;
+} else {
+    echo "No item ID provided.";
+}
+?>

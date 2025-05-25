@@ -172,7 +172,10 @@ body {
     overflow-wrap: break-word;
     white-space: normal;
 }
-
+.item-link{
+    text-decoration: none;
+    color: black;
+}
 /*For addList page*/
 #top-mylist{
     display: flex;
@@ -277,100 +280,7 @@ input.list-add-first{
     display: flexbox;
     flex-direction: column;
 }
-/* .add-section{
-    background: rgb(102, 122, 136);
-    border: 1px solid black;
-    border-radius:20px;
-    display: flex;
-    flex-direction: row;
-    margin: 30px;
-    height: 410px;
-    justify-content: center;
-}
-.add-section-left{
-    display: flex;
-    flex-direction: row;
-    background: white;
-    margin: 20px;
-    width: 45%;
-}
-#list-form {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: 20px;
-}
-#list-form label,input{
-    font-size: 20px;
-    text-align: left;
-    left: 10%;
-    width: 270px;
-    height: 25px;
-    margin-bottom: 20px;
-    margin-top: 5px;
-}
-.info-right textarea{
-    max-width: 260px;
-    max-height: 250px;
-    min-width: 260px;
-    min-height: 250px;
-}
-.add-section-right{
-    background:white;
-    margin: 20px;
-    width: 45%;
-}
-.info-left{
-    width: 400px;
-    height: 370px;
-}
-.info-right{
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    width: 300px;
-    height: 370px;
-}
-.price-div{
-    display: flex;
-    flex-direction: row;
-}
-.currancy{
-    font-size: 25px;
-    margin: 10px 5px 0px 0px;
-}
-.inp-price{
-    width: 248px;
-}
-.inp-check{
-    display: flexbox;
-}
-#inp-boxes{
-    width: 25px;
-}
-#img-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 75%;
-}
-.img-place{
-    border: 1px solid black;
-    background: lightgray;
-    width:75%;
-    height: 75%;
-    margin: 15px;
-}
-#img-select{
-    width: auto;
-}
-#preview-img{
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-/*resposive for form
+/*resposive for form when i come back to make it more responsive
 @media screen and (max-width: 1300px) {
     .info-right textarea{
         max-width: 120px;

@@ -34,8 +34,7 @@
     <h1 class="headline"><?php if (isset($_SESSION['username'])): ?><?php echo htmlspecialchars($_SESSION['username'])?>'s Lists<?php else: ?>User List<?php endif; ?></h1>
    <div class="my-lists m-4 " id="items-container">
        <?php while ($row = $result->fetch_assoc()): ?>
-        <a href="item.php?id=<?php echo $row['id'];?>" class="item-link">
-            <div class="item-block">
+            <div class="item-block" data-id="<?php echo $row['id'];?>">
                 <div class="item-image">
                     <img class="list-image" src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
                 </div>
@@ -47,7 +46,6 @@
                      </div>
                 </div>
             </div>  
-        </a>
        <?php endwhile; ?>
     </div>
         
