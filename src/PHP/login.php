@@ -42,10 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             $_SESSION['username'] = $dbUsername;
                             $stmt->close();
                             $conn->close();
-                            echo "<script>
-                                    alert('Login Successful!');
-                                    window.location.href = '../index.php';
-                                  </script>";
+                            $_SESSION['login_message'] = "Login Successful!";
+                            header("Location: ../index.php");
                             exit();
                         } else {
                             $stmt->close();

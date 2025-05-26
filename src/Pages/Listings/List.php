@@ -1,8 +1,16 @@
 <?php 
+    session_start();
+    if (!isset($_SESSION['username'])) {
+    header("Location: ../Login/login.html");
+    exit(); 
+    }
     include "../../PHP/userDB/mysqlConn.php";
+    $username = $_SESSION['username'];
 
-    $sqlSelect = "SELECT * FROM listdb ORDER BY created_at DESC";
-    $result = $conn ->query($sqlSelect);
+    $stmt = $conn->prepare("SELECT * FROM listdb WHERE user = ? ORDER BY created_at DESC");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +23,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <?php session_start();?>
     <Header>
         <div class="navbar navbar-expand">
             <div class="container" id="top-bar">
@@ -58,7 +65,7 @@
                 <li><font color="red">DO NOT</font> list inapropriate materials, this includes picturs,descriptions and names!</li>
             </ul>
         </div>
-        <a href="../extraPages/addList.html" class="add-link"><button id="list-add-btn">List an item</button></a>
+        <a href="../extraPages/addList.php" class="add-link"><button id="list-add-btn">List an item</button></a>
     </div>
     <script src="../../Scripts/main.js"></script>
     <script src="../../Scripts/fpage.js"></script>

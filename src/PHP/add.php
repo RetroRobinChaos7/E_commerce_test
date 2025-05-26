@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         echo "<script>alert('The file failed to upload!')</script>";
         exit();
     }
-
+    
     $stmt = $conn->prepare('Insert Into listdb(title,price,cat,description,itemImage,user) values (?,?,?,?,?,?)');
     $stmt->bind_param('sdssss', $title, $price, $cat, $desc, $listImg, $username);
     if($stmt->execute()){
