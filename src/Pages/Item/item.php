@@ -37,10 +37,17 @@
         <a href="../Settings/Settings.html" class="menu-links">Acount settings</a>
         <a href="../About/About.html" class="menu-links">About us</a>
     </div>
-    <h1 class="headline"><?php echo htmlspecialchars($item['title']);?></h1>
-    <img src="../../<?php echo htmlspecialchars($item['itemImage']); ?>" style="width:300px;">
-    <p>Price: $<?php echo number_format($item['price'], 2); ?></p>
-    <p><?php echo nl2br(htmlspecialchars($item['description'])); ?></p>
+    <div class="container" id="background-area">
+        <h1 class="headline"><?php echo htmlspecialchars($item['title']);?></h1>
+        <div>
+            <img src="../../<?php echo htmlspecialchars($item['itemImage']); ?>" style="width:300px;height:400px;">
+        </div>
+        <div>
+            <p>Price: $<?php echo number_format($item['price'], 2); ?></p>
+            <p><?php echo nl2br(htmlspecialchars($item['description'])); ?></p>
+            <button class="add-list-btn">Buy</button>
+        </div>
+    </div>
 </body>
 </html>
 <?php

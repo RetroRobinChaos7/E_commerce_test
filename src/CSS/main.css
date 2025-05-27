@@ -108,6 +108,9 @@ body {
     justify-self: center;
     color: white;
 }
+#background-area{
+    background: white;
+}
 /*Listing css*/
 #list-add-btn{
     background-color: rgb(38, 50, 59);
