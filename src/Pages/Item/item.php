@@ -43,7 +43,7 @@
             <img src="../../<?php echo htmlspecialchars($item['itemImage']); ?>" style="width:300px;height:400px;">
         </div>
         <div>
-            <p>Price: $<?php echo number_format($item['price'], 2); ?></p>
+            <p id="list-page-price">Price: $<?php echo number_format($item['price'], 2); ?></p>
             <p><?php echo nl2br(htmlspecialchars($item['description'])); ?></p>
             <button class="add-list-btn">Buy</button>
         </div>
