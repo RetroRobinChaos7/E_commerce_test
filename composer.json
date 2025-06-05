@@ -1,13 +1,9 @@
 {
-  "name": "your-username/matexchange",
+  "name": "retrorobinchaos7/matexchange",
   "description": "Matexchange PHP application",
   "require": {
     "php": "^8.3",
     "ext-mysqli": "*",
-    "ext-pdo_mysql": "*",
-    "heroku/heroku-buildpack-php": "^2.0"
-  },
-  "scripts": {
-    "start": "vendor/bin/heroku-php-apache2 ."
+    "ext-pdo_mysql": "*"
   }
 }
