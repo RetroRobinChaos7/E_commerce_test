@@ -6,7 +6,8 @@
       "providers": ["php"],
       "phases": {
         "setup": {
-          "nixPkgs": ["php", "php83Extensions.mysqli", "php83Extensions.pdo_mysql"]
+          "nixPkgs": ["php", "php83Extensions.mysqli", "php83Extensions.pdo_mysql", "composer"],
+          "cmds": ["composer install --no-dev --optimize-autoloader"]
         }
       }
     }

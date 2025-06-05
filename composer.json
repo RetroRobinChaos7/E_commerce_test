@@ -1,0 +1,12 @@
+{
+  "name": "retro/matexchange",
+  "description": "Matexchange PHP application",
+  "require": {
+    "php": "^8.2",
+    "ext-mysqli": "*",
+    "ext-pdo_mysql": "*"
+  },
+  "scripts": {
+    "start": "vendor/bin/heroku-php-apache2 public/"
+  }
+}
