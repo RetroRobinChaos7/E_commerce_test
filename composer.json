@@ -2,19 +2,12 @@
   "name": "your-username/matexchange",
   "description": "Matexchange PHP application",
   "require": {
-    "php": "^8.2",
+    "php": "^8.3",
     "ext-mysqli": "*",
-    "ext-pdo_mysql": "*"
+    "ext-pdo_mysql": "*",
+    "heroku/heroku-buildpack-php": "^2.0"
   },
   "scripts": {
-    "post-install-cmd": [
-      "heroku-php-apache2"
-    ],
     "start": "vendor/bin/heroku-php-apache2 ."
-  },
-  "extra": {
-    "heroku": {
-      "php-version": "8.2"
-    }
   }
 }
