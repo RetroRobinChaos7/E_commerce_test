@@ -43,7 +43,7 @@
        <?php while ($row = $result->fetch_assoc()): ?>
             <div class="item-block" data-id="<?php echo $row['id'];?>">
                 <div class="item-image">
-                    <img class="list-image" src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
+                    <img class="list-image" src="../../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
                 </div>
                 <div class="item-description">
                      <div class="box">

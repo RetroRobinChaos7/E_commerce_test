@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     include '../PHP/userDB/mysqlConn.php';
     
-    $imageDir = "../Images/Uploads/";
+    $imageDir = "../../Uploads/";
     $imageName = basename($_FILES["listImg"]["name"]);
     $imageType = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
     $uniqueName = uniqid().".".$imageType;
