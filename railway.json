@@ -7,12 +7,16 @@
       "phases": {
         "setup": {
           "nixPkgs": ["php", "php83Extensions.mysqli", "php83Extensions.pdo_mysql", "composer"],
-          "cmds": ["composer install --no-dev --optimize-autoloader"]
+          "cmds": [
+            "composer install --no-dev --optimize-autoloader",
+            "curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer",
+            "composer require heroku/heroku-buildpack-php"
+          ]
         }
       }
     }
   },
   "deploy": {
-    "startCommand": "vendor/bin/heroku-php-apache2"
+    "startCommand": "vendor/bin/heroku-php-apache2 ."
   }
 }
