@@ -283,6 +283,136 @@ input.list-add-first{
     display: flexbox;
     flex-direction: column;
 }
+/*Admin page*/
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+}
+.btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #a93226;
+}
+#search-form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+#search-form .input-group {
+    max-width: 500px;
+    margin: 0 auto;
+}
+/*report page */
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #a93226;
+}
+.add-list-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Report form */
+#report-form {
+    margin-top: 15px;
+}
+#report-form textarea {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+#list-page-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* Item Page Specific Styles */
+#item-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.item-page-block {
+    background-color: rgb(41, 55, 65);
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgb(155, 155, 155);
+}
+
+.item-page-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.item-page-image {
+    flex: 0 0 auto;
+}
+
+.item-page-image img {
+    width: 450px;
+    height: 400px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.item-page-description {
+    flex: 1;
+    min-width: 0; /* Prevent overflow */
+}
+
+.item-page-box {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 400px; /* Ensure it matches the image height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-page-desc {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+/* Remove conflicting styles */
+#background-area {
+    background: transparent !important;
+}
+
+.my-lists .item-page-block {
+    background-color: rgb(41, 55, 65) !important;
+}
+@media screen and (max-width: 768px) {
+    .item-page-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .item-page-description {
+        width: 100%;
+    }
+    .item-page-box {
+        height: auto; 
+    }
+}
 /*resposive for form when i come back to make it more responsive
 @media screen and (max-width: 1300px) {
     .info-right textarea{

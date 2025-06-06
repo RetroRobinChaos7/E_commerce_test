@@ -12,7 +12,7 @@
 <body>
     <div class="navbar navbar-expand">
         <div class="container" id="top-bar">
-            <div id="title" class="navbar-brand"> <a href="../../index.php" class="nav-content">Matexchange</a></div>
+            <div id="title" class="navbar-brand"> <a href="../../../index.php" class="nav-content">Matexchange</a></div>
             <ul class="navbar-nav">
                 <li class="nav-item"><button class="nav-content" id="dropdown-btn">|||</button></li>
             </ul>

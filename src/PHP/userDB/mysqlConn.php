@@ -1,16 +1,13 @@
 <?php
-$servername = getenv('DB_HOST') ?: 'localhost';
-$username = getenv('DB_USERNAME') ?: 'root';
-$password = getenv('DB_PASSWORD') ?: '';
-$dbname = getenv('DB_NAME') ?: 'your_database_name';
-$port = getenv('DB_PORT') ?: '3306';
 
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+$servername = "sql202.infinityfree.com";
+$dbUsername = "if0_39173446";
+$password = "Retropaswoord";
+$datebaseName = 'if0_39173446_userbase_db';
+
+$conn = new mysqli($servername, $dbUsername, $password, $datebaseName);
 
 if ($conn->connect_error) {
-    error_log("Database connection failed: " . $conn->connect_error);
-    die("Connection failed: " . $conn->connect_error);
-} else {
-    error_log("Database connected successfully");
+    die("Connection Failed". $conn->connect_error);
 }
 ?>
