@@ -14,9 +14,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $desc = htmlspecialchars($_POST['desc']);
     $username = $_SESSION['username'];
 
-    include '../PHP/userDB/mysqlConn.php';
+    include("../PHP/userDB/mysqlConn.php");
     
-    $imageDir = "../../Uploads/";
+    $imageDir = "../Images/Uploads/";
     $imageName = basename($_FILES["listImg"]["name"]);
     $imageType = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
     $uniqueName = uniqid().".".$imageType;

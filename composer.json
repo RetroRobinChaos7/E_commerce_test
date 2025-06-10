@@ -1,9 +1,0 @@
-{
-  "name": "retrorobinchaos7/matexchange",
-  "description": "Matexchange PHP application",
-  "require": {
-    "php": "^8.3",
-    "ext-mysqli": "*",
-    "ext-pdo_mysql": "*"
-  }
-}

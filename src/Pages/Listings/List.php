@@ -26,7 +26,7 @@
     <Header>
         <div class="navbar navbar-expand">
             <div class="container" id="top-bar">
-                <div id="title" class="navbar-brand"> <a href="../../index.php" class="nav-content">Matexchange</a></div>
+                <div id="title" class="navbar-brand"> <a href="../../../index.php" class="nav-content">Matexchange</a></div>
                 <div id="menu-btn" class="ribbon-content"><button class="nav-content" id="dropdown-btn">|||</button></div>
             </div>
         </div>
@@ -43,7 +43,7 @@
        <?php while ($row = $result->fetch_assoc()): ?>
             <div class="item-block" data-id="<?php echo $row['id'];?>">
                 <div class="item-image">
-                    <img class="list-image" src="../../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
+                    <img class="list-image" src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
                 </div>
                 <div class="item-description">
                      <div class="box">
