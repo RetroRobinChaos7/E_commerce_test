@@ -50,6 +50,10 @@
                          <h5 class="list-title"><?php echo htmlspecialchars($row['title']); ?></h5>
                          <p>Price: $<?php echo number_format($row['price'], 2); ?></p>
                          <p class="list-ini-desc"><?php echo htmlspecialchars($row['description']); ?></p>
+                         <form action="../../PHP/remove.php" enctype="multipart/form-data" method="POST" id="remove-form" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                            <input type="hidden" name="item_id" value="<?php echo intval($row['id']);?>">
+                            <button type="submit" name="delete_item" class="btn btn-danger btn-sm">Delete</button>
+                         </form>
                      </div>
                 </div>
             </div>  

@@ -41,6 +41,32 @@
         $stmt->execute();
         $result = $stmt->get_result();
         ?>
+        <div class="my-lists" id="index-top" style="height: 400px; margin-top: 70px;">
+            <div class="index-block" id="index-block-left">
+                <div id="index-block-desc">
+                    <div class="border-box" id="border-box-left">
+                        <p id="made-easy">Do it</p>
+                        <div ><hr class="inner-hr"></div>
+                        <p id="made-easy">Simple</p>
+                        <div><hr class="inner-hr"></div>
+                        <p id="made-easy">With</p>
+                        <div><hr class="inner-hr"></div>
+                        <p class="matexchange">Matexchange</p>
+                    </div>
+                </div>
+            </div>
+            <div class="index-block" id="index-block-right">
+                <div id="index-block-desc">
+                    <div class="border-box" id="border-box-right">
+                        <p class="index-top-desc">Do you need to sell you handbook?</p>
+                        <p class="index-top-desc">Are the regular platforms just not yielding results?</p>
+                        <div class="dot"></div>
+                        <p class="index-top-desc">Well look no further.</p>
+                        <p class="index-top-desc">With Matexchange you can broaden your reach.</p>
+                    </div>
+                </div>   
+            </div>
+        </div>
         <h2 class="headline" style="margin-top: 20px;">Recently Added Items</h2>
         <div class="my-lists m-4" id="top-items-container">
             <?php while ($row = $result->fetch_assoc()): ?>
@@ -61,6 +87,14 @@
             <?php $conn->close(); ?>
         </div>
     </div>
+    <footer class="text-center text-lg-start mt-5" style="border-top: 1px solid black; padding: 20px 0;background-color:rgb(38, 50, 59);">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="mb-2 mb-md-0 text-light">
+                <span class="fw-bold">Matexchange</span> &copy; <?php echo date('Y'); ?>. All rights reserved.
+            </div>
+            <div><a href="#">about</a></div>
+        </div>
+    </footer>
     <script src="src/Scripts/main.js"></script>
     <script src="src/Scripts/fpage.js"></script>
 </body>
