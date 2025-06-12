@@ -70,9 +70,9 @@
         <h2 class="headline" style="margin-top: 20px;">Recently Added Items</h2>
         <div class="my-lists m-4" id="top-items-container">
             <?php while ($row = $result->fetch_assoc()): ?>
-                <div class="item-block" data-id="<?php echo $row['id']; ?>">
+                <div class="item-block" data-id="<?php echo $row['id'];?>">
                     <div class="item-image">
-                        <img class="list-image" src="<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
+                        <img class="list-image" src="src/<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
                     </div>
                     <div class="item-description">
                         <div class="box">
@@ -85,7 +85,7 @@
                 </div>
             <?php endwhile; ?>
             <?php $conn->close(); ?>
-        </div>
+        </div>  
     </div>
     <footer class="text-center text-lg-start mt-5" style="border-top: 1px solid black; padding: 20px 0;background-color:rgb(38, 50, 59);">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
