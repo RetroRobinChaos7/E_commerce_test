@@ -6,7 +6,7 @@ for (let i = 0; i < frontPI.length; i++) {
   frontPI[i].addEventListener("dblclick", function () {
     const itemID = this.getAttribute("data-id");
     const basePath = getRootPath();
-    window.location.href = `${basePath}/src/Pages/Item/item.php?id=${itemID}`;
+    window.location.href = `${basePath}e_commerce_test/src/Pages/Item/item.php?id=${itemID}`;
   });
 }
 

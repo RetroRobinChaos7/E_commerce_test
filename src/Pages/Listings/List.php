@@ -12,6 +12,11 @@
     $stmt->execute();
     $result = $stmt->get_result();
 ?>
+<script>
+
+    let counter = 0;
+
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,26 +44,34 @@
         <a href="../About/About.html" class="menu-links">About us</a>
     </div>
     <h1 class="headline"><?php if (isset($_SESSION['username'])): ?><?php echo htmlspecialchars($_SESSION['username'])?>'s Lists<?php else: ?>User List<?php endif; ?></h1>
-   <div class="my-lists m-4 " id="items-container">
-       <?php while ($row = $result->fetch_assoc()): ?>
-            <div class="item-block" data-id="<?php echo $row['id'];?>">
-                <div class="item-image">
-                    <img class="list-image" src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
-                </div>
-                <div class="item-description">
-                     <div class="box">
-                         <h5 class="list-title"><?php echo htmlspecialchars($row['title']); ?></h5>
-                         <p>Price: $<?php echo number_format($row['price'], 2); ?></p>
-                         <p class="list-ini-desc"><?php echo htmlspecialchars($row['description']); ?></p>
-                         <form action="../../PHP/remove.php" enctype="multipart/form-data" method="POST" id="remove-form" onsubmit="return confirm('Are you sure you want to delete this item?');">
-                            <input type="hidden" name="item_id" value="<?php echo intval($row['id']);?>">
-                            <button type="submit" name="delete_item" class="btn btn-danger btn-sm">Delete</button>
-                         </form>
-                     </div>
-                </div>
-            </div>  
-       <?php endwhile; ?>
-    </div>
+   <div class="container">
+       <div class="my-lists m-4 " id="items-container">
+          <?php while ($row = $result->fetch_assoc()):?>
+               <div class="item-block" data-id="<?php echo $row['id'];?>">
+                   <div class="item-image">
+                       <img class="list-image" src="../../<?php echo htmlspecialchars($row['itemImage']); ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
+                   </div>
+                   <div class="item-description">
+                        <div class="box">
+                            <h5 class="list-title"><?php echo htmlspecialchars($row['title']); ?></h5>
+                            <p>Price: $<?php echo number_format($row['price'], 2); ?></p>
+                            <p class="list-ini-desc"><?php echo htmlspecialchars($row['description']); ?></p>
+                            <div style="display: flex;">
+                                <form action="../../PHP/remove.php" enctype="multipart/form-data" method="POST" id="remove-form" onsubmit="return confirm('Are you sure you want to delete this item?');" style="margin-right: 5px;">
+                                   <input type="hidden" name="item_id" value="<?php echo intval($row['id']);?>">
+                                   <button type="submit" name="delete_item" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                                <form action="../../PHP/update.php" enctype="multipart/form-data" method="POST" id="update-form" onsubmit="return confirm('Do you want to update this item?');">
+                                    <input type="hidden" name="item_id" value="<?php echo intval($row['id']);?>">
+                                    <button type="submit" name="update_item" class="btn btn-primary btn-sm">Update</button>
+                                </form>
+                            </div>
+                        </div>
+                   </div>
+               </div>  
+          <?php endwhile; ?>
+       </div>
+   </div>
         
         <div class="list-add-area">
         <div class="p-2 m-4" id="list-desc">

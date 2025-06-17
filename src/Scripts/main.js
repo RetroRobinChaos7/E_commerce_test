@@ -1,4 +1,4 @@
-let menu = document.querySelector("button");
+let menu = document.getElementById("dropdown-btn");
 let openM = document.getElementById("display-menu");
 let login = document.getElementById("login");
 let userName = document.getElementById("user-profile");

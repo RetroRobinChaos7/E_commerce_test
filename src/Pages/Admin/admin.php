@@ -4,6 +4,25 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include("../../PHP/userDB/mysqlConn.php");
+//getting total users
+$stmt = $conn->prepare("SELECT COUNT(*) as total FROM users");
+$stmt -> execute();
+$userData = $stmt -> get_result();
+$userCount = mysqli_fetch_assoc($userData);
+$stmt -> close();
+//getting total listings
+$stmt = $conn->prepare("SELECT COUNT(*) as total FROM listdb");
+$stmt -> execute();
+$data = $stmt -> get_result();
+$count = mysqli_fetch_assoc($data);
+$stmt -> close();
+
+//finding most poular catagory 
+// $stmt = $conn->prepare("SELECT COUNT() as total FROM listdb");
+// $stmt -> execute();
+// $data = $stmt -> get_result();
+// $count = mysqli_fetch_assoc($data);
+// $stmt -> close();
 
 // Debug session variables
 error_log("Session data: " . print_r($_SESSION, true));
@@ -114,23 +133,25 @@ if ($stmt) {
                 <button type="submit" name="search_user" class="btn btn-primary">Search</button>
             </div>
         </form>
-        <?php if (!empty($search_results)): ?>
-            <div class="my-lists">
-                <?php foreach ($search_results as $user): ?>
-                    <div class="item-block">
-                        <div class="item-description">
-                            <div class="box">
-                                <h5 class="list-title"><?= htmlspecialchars($user['username']) ?></h5>
-                                <p>Email: <?= htmlspecialchars($user['email']) ?></p>
-                                <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
-                                    <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
-                                    <button type="submit" name="delete_user" class="btn btn-danger btn-sm">Delete</button>
-                                </form>
+        <div class="container">
+            <?php if (!empty($search_results)): ?>
+                <div class="my-lists">
+                    <?php foreach ($search_results as $user): ?>
+                        <div class="item-block">
+                            <div class="item-description">
+                                <div class="box">
+                                    <h5 class="list-title"><?= htmlspecialchars($user['username']) ?></h5>
+                                    <p>Email: <?= htmlspecialchars($user['email']) ?></p>
+                                    <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                        <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+                                        <button type="submit" name="delete_user" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+                    <?php endforeach; ?>
+                </div>
+        </div>
         <?php elseif (isset($_POST['search_user'])): ?>
             <p class="text-center text-light">No users found.</p>
         <?php endif; ?>
@@ -138,55 +159,72 @@ if ($stmt) {
 
     <!-- Reported Users -->
     <h2 class="headline mt-4">Reported Users</h2>
-    <div class="my-lists">
-        <?php if (!empty($reported_users)): ?>
-            <?php foreach ($reported_users as $report): ?>
-                <div class="item-block">
-                    <div class="item-description">
-                        <div class="box">
-                            <h5 class="list-title"><?= htmlspecialchars($report['username']) ?></h5>
-                            <p>Email: <?= htmlspecialchars($report['email']) ?></p>
-                            <p>Reason: <?= htmlspecialchars($report['reason']) ?></p>
-                            <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
-                                <input type="hidden" name="user_id" value="<?= $report['user_id'] ?>">
-                                <button type="submit" name="delete_user" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
+    <div class="container">
+        <div class="my-lists">
+            <?php if (!empty($reported_users)): ?>
+                <?php foreach ($reported_users as $report): ?>
+                    <div class="item-block">
+                        <div class="item-description">
+                            <div class="box">
+                                <h5 class="list-title"><?= htmlspecialchars($report['username']) ?></h5>
+                                <p>Email: <?= htmlspecialchars($report['email']) ?></p>
+                                <p>Reason: <?= htmlspecialchars($report['reason']) ?></p>
+                                <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                    <input type="hidden" name="user_id" value="<?= $report['user_id'] ?>">
+                                    <button type="submit" name="delete_user" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p class="text-center text-light">No reported users.</p>
-        <?php endif; ?>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="text-center text-light">No reported users.</p>
+            <?php endif; ?>
+        </div>
     </div>
 
     <!-- Reported Items -->
     <h2 class="headline mt-4">Reported Items</h2>
-    <div class="my-lists">
-        <?php if (!empty($reported_items)): ?>
-            <?php foreach ($reported_items as $report): ?>
-                <div class="item-block">
-                    <div class="item-image">
-                        <img class="list-image" src="../../<?= htmlspecialchars($report['itemImage']) ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
-                    </div>
-                    <div class="item-description">
-                        <div class="box">
-                            <h5 class="list-title"><?= htmlspecialchars($report['title']) ?></h5>
-                            <p>Seller: <?= htmlspecialchars($report['user']) ?></p>
-                            <p>Reason: <?= htmlspecialchars($report['reason']) ?></p>
-                            <form method="POST" onsubmit="return confirm('Are you sure you want to delete this item?');">
-                                <input type="hidden" name="item_id" value="<?= $report['item_id'] ?>">
-                                <button type="submit" name="delete_item" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
+    <div class="container">
+        <div class="my-lists">
+            <?php if (!empty($reported_items)): ?>
+                <?php foreach ($reported_items as $report): ?>
+                    <div class="item-block">
+                        <div class="item-image">
+                            <img class="list-image" src="../../<?= htmlspecialchars($report['itemImage']) ?>" alt="Item Image" style="width:100%; max-height:200px; object-fit:cover;">
+                        </div>
+                        <div class="item-description">
+                            <div class="box">
+                                <h5 class="list-title"><?= htmlspecialchars($report['title']) ?></h5>
+                                <p>Seller: <?= htmlspecialchars($report['user']) ?></p>
+                                <p>Reason: <?= htmlspecialchars($report['reason']) ?></p>
+                                <form method="POST" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                    <input type="hidden" name="item_id" value="<?= $report['item_id'] ?>">
+                                    <button type="submit" name="delete_item" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p class="text-center text-light">No reported items.</p>
-        <?php endif; ?>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="text-center text-light">No reported items.</p>
+            <?php endif; ?>
+        </div>
     </div>
-
+    <div id="insights">
+        <div class="insight-box">
+            <div><P class="insght-text">Current amout of registered users:</P></div>
+            <div>
+                <p class="insght-text"><?php echo $userCount['total']?></p>
+            </div>
+        </div>
+        <div class="insight-box">
+            <div><P class="insght-text">Current amout of listed items:</P></div>
+            <div height="100%">
+                <p class="insght-text"><?php echo $count['total']?></p>
+            </div>
+        </div>
+    </div>
     <script src="../../Scripts/main.js"></script>
 </body>
 </html>

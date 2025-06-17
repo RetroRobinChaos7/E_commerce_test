@@ -15,11 +15,11 @@
         if (isset($_POST['logout'])){
             session_unset();
             session_destroy();
-            header("Location: ../../../../index.php");
+            header('Location: ../../../index.php');
             exit();
         }
     ?>
-    <a href="../../../index.php" class="text-dark" style="text-decoration: none;"><button id="list-add-btn">&#8592;</button></a>
+    <a href="index.php" class="text-dark" style="text-decoration: none;"><button id="list-add-btn">&#8592;</button></a>
     <div class="container">
         <form method="POST">
         <div class="row">

@@ -37,7 +37,6 @@ body {
     padding: 7px;
     text-decoration: none;
     color: white;
-    text-decoration: none;
     font-size: 28px;
     background-color: rgb(41, 55, 65);
 }
@@ -73,6 +72,9 @@ body {
     height: 400px;
     width: 280px;
     margin: 2%;
+}
+.item-block:hover {
+    transform: scale(1.03);
 }
 .item-block-selected {
     background-color: rgb(167, 167, 167);
@@ -218,6 +220,18 @@ body {
 
 }
 .my-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: rgb(38, 50, 59);
+    border: 3px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgb(155, 155, 155);
+    width: 100%;
+    box-sizing: border-box;
+}
+.my-lists-offshoot{
     background-color: rgb(38, 50, 59);
     border: 3px solid black;
     border-radius:20px;
@@ -226,6 +240,7 @@ body {
     margin: 30px;
     height: 500px;
     box-shadow: 0 0 15px rgb(155, 155, 155); 
+    background: linear-gradient(to top,rgb(38, 50, 59), rgb(38, 50, 59));
 }
 .my-lists .item-block{
     background-color: white;
@@ -392,6 +407,27 @@ input.list-add-first{
     max-width: 500px;
     margin: 0 auto;
 }
+#insights{
+    display: flex;
+    flex-direction: row;
+}
+.insight-box{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(38, 50, 59);
+    border: 3px solid black;
+    border-radius:20px;
+    margin: 30px;
+    height: 200px;
+    box-shadow: 0 0 15px rgb(155, 155, 155); 
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.insght-text{
+    font-size: 20px;
+    color:white;
+}
 /*report page */
 .btn-danger {
     background-color: #e74c3c;
@@ -505,6 +541,7 @@ input.list-add-first{
         height: auto; 
     }
 }
+
 /*resposive for form when i come back to make it more responsive
 @media screen and (max-width: 1300px) {
     .info-right textarea{

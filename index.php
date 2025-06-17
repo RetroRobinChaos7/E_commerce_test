@@ -10,20 +10,32 @@
 </head>
 <body><?php ini_set('session.cookie_lifetime', 0);  session_start();?>
     <HEADER>
-        <div class="navbar navbar-expand">
-            <div class="container" id="top-bar">
-                <div id="title" class="navbar-brand"> <a href="index.php" class="nav-content">Matexchange</a></div>
-                <ul class="navbar-nav">
-                    <?php if (isset($_SESSION['username'])): ?>
-                    <li class="nav-item"><a href="src/Pages/Profile/profile.php" class="nav-content"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
-                    <?php else: ?>
-                    <li class="nav-item"><a href="src/Pages/Login/login.html" class="nav-content">Login</a></li>
-                    <?php endif; ?>
-                    <li class="nav-item"><button class="nav-content" id="dropdown-btn">|||</button></li>
-                </ul>   
+    <div class="navbar navbar-expand">
+        <div class="container" id="top-bar">
+            <div id="title" class="navbar-brand">
+                <a href="index.php" class="nav-content">Matexchange</a>
             </div>
-        </div>     
-    </HEADER>
+            <ul class="navbar-nav align-items-center">
+                <form class="d-flex me-3" action="src/Pages/Search/search.php" method="GET" role="search">
+                    <input class="form-control me-2" type="search" name="query" placeholder="Search items..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">&#128269;</button>
+                </form>
+                <?php if (isset($_SESSION['username'])): ?>
+                    <li class="nav-item">
+                        <a href="src/Pages/Profile/profile.php" class="nav-content">
+                            <?php echo htmlspecialchars($_SESSION['username']); ?>
+                        </a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a href="src/Pages/Login/login.html" class="nav-content">Login</a>
+                    </li>
+                <?php endif; ?>
+                <li class="nav-item"><button class="nav-content" id="dropdown-btn">|||</button></li>
+            </ul>
+        </div>
+    </div>
+</HEADER>
     <div id="display-menu" class="display-menu">
     <a href="src/Pages/Catagories/Catagories.html" class="menu-links">Catagories</a>
     <a href="src/Pages/Listings/List.php" class="menu-links">Your Lists</a>
@@ -41,7 +53,7 @@
         $stmt->execute();
         $result = $stmt->get_result();
         ?>
-        <div class="my-lists" id="index-top" style="height: 400px; margin-top: 70px;">
+        <div class="my-lists-offshoot" id="index-top" style="height: 400px; margin-top: 70px;">
             <div class="index-block" id="index-block-left">
                 <div id="index-block-desc">
                     <div class="border-box" id="border-box-left">

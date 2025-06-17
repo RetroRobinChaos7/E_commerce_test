@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->close();
         $conn->close();
 
-        header("Location: ../Login/login.php");
+        header("Location: ../Pages/Login/login.html");
     }
 } else {
     header("Location: ../Pages/Register/register.html");

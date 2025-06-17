@@ -1,4 +1,5 @@
 .env
 .jpg
 .png
-Images/Uploads/
+
+src/Images/Uploads/
